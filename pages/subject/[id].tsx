@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {selectSubject, setSubjectName} from '../../redux/subjectSlice';
 import {recipesSelector} from '../../redux/authSlice';
+import {selectSubject, setSubjectName} from '../../redux/subjectSlice';
 
 const Page = () => {
     // console.log('State on render', useStore().getState(), {props});
@@ -29,12 +29,6 @@ const Page = () => {
         );
     };
 
-    // console[content ? 'info' : 'warn']('Rendered content: ', content);
-
-    // if (!content) {
-    //     return <div>RENDERED WITHOUT CONTENT FROM STORE!!!???</div>;
-    // }
-
     const handleSubject = () => {
         dispatch(setSubjectName('Hindi'));
     };
@@ -58,20 +52,5 @@ const Page = () => {
         </div>
     );
 };
-
-// export const getServerSideProps = wrapper.getServerSideProps((store) => async ({params}) => {
-//     const {id} = params;
-
-//     await store.dispatch(fetchSubject(id));
-//     //  data = // getUser
-
-//     console.log('State on server', store.getState());
-
-//     return {
-//         props: {
-//             id,
-//         },
-//     };
-// });
 
 export default Page;
